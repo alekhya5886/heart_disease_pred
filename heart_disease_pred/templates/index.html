@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+
+    <form action="/predict" method="post">
+        <!-- Gender -->
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br>
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="1" required><br>
+
+        <!-- Family History -->
+        <label for="familyHistory">Family History:</label>
+        <select name="familyHistory" id="familyHistory">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <!-- Past Heart Issues -->
+        <label for="pastHeartIssues">Past Heart Issues:</label>
+        <select name="pastHeartIssues" id="pastHeartIssues">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <!-- Physical Activity -->
+        <label for="physicalActivity">Physical Activity:</label>
+        <select name="physicalActivity" id="physicalActivity">
+            <option value="0">Low</option>
+            <option value="1">High</option>
+        </select><br>
+
+        <!-- Diet -->
+        <label for="diet">Diet:</label>
+        <select name="diet" id="diet">
+            <option value="0">Unhealthy</option>
+            <option value="1">Healthy</option>
+        </select><br>
+
+        <!-- Smoking -->
+        <label for="smoking">Smoking:</label>
+        <select name="smoking" id="smoking">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <!-- Alcohol Consumption -->
+        <label for="alcoholConsumption">Alcohol Consumption:</label>
+        <select name="alcoholConsumption" id="alcoholConsumption">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <!-- Sleep Patterns -->
+        <label for="sleepPatterns">Sleep Patterns:</label>
+        <select name="sleepPatterns" id="sleepPatterns">
+            <option value="0">8 hours or more</option>
+            <option value="1">Less than 8 hours</option>
+        </select><br>
+
+        <!-- High Blood Pressure -->
+        <label for="highBloodPressure">High Blood Pressure:</label>
+        <select name="highBloodPressure" id="highBloodPressure">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <!-- Diabetic -->
+<label for="diabetic">Diabetic:</label>
+<select name="diabetic" id="diabetic">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select><br>
+
+
+        <!-- Submit Button -->
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction }}</p>
+{% endif %}
+
